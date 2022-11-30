@@ -1,0 +1,55 @@
+using System;
+
+namespace OverlodingCalculator
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Triangle,Square,Rectangle
+            Shape shape = new Shape();
+            shape.Area();
+            shape = new Triangle();
+            Console.WriteLine($"Area of the Triangle = {shape.Area()}"); 
+            shape = new Square();
+            Console.WriteLine($"Area of the Square = {shape.Area()}"); 
+            shape = new Rectangle();
+            Console.WriteLine($"Area of the Rectangle = {shape.Area()}"); ;
+        }
+        public class Shape
+        {
+            public virtual float Area()
+            {
+                
+                return 0;
+            }
+        }
+        public class Triangle: Shape
+        {
+            public override float Area()
+            {
+                float areaOfTriangle, b=4, h=5;
+                areaOfTriangle = (b*h)/2;
+                return areaOfTriangle;
+            }
+        }
+        public class Square : Shape
+        {
+            public override float Area()
+            {
+                float areaOfSquare,a=2;
+                areaOfSquare = a*a;
+                return areaOfSquare;
+            }
+        }
+        public class Rectangle : Shape
+        {
+            public override float Area()
+            {
+                float areaOfRectangle, l = 2, w = 3;
+                areaOfRectangle = l * w;
+                return areaOfRectangle;
+            }
+        }
+    }
+}
